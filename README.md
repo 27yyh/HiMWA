@@ -16,13 +16,15 @@ python HiMWA.py --input examples/example.seg --output examples/example
 ```
 
 ## Arguments and Options 
---input	string	Input file name	required
---output	string	Prefix of output file	optional, default = ‘out’
---lower	float	Lower bound to discard short tracts	optional, default = 0
---lowerEF	float	Lower bound to discard short tracts of admixed ancestral population	optional, default = 0
---bootstrap	int	Number of bootstrapping	optional, default = 0
---ci	string	Confidence level of bootstrapping confidence interval	optional, default = 0.95
--h	/	Print help message	/
+| Flag           | Type    | Description                                  | Default     |
+|----------------|---------|----------------------------------------------|-------------|
+| `--input`      | string  | Input file name (required)                   | -           |
+| `--output`     | string  | Output file prefix                           | `out`       |
+| `--lower`      | float   | Min tract length cutoff                      | `0`         |
+| `--lowerEF`    | float   | Min tract length (admixed ancestors)         | `0`         |
+| `--bootstrap`  | int     | Bootstrap iterations                         | `0`         |
+| `--ci`         | string  | Confidence level                             | `0.95`      |
+| `-h`, `--help` | flag    | Show help                                    | -           |
 
 ## Notes 
 It should be noted that the model selection of HiMWA may be unreliable for admixed populations with extremely biasd admixture proportions. Furthermore, in scenarios with multiple recent admixture waves, the inferred times of recent admixture events by HiMWA may be overestimated. It is advised to correct the overestimation of the admixture times referring the strategy in this study under specific model configurations.
